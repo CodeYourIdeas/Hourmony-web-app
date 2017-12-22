@@ -1,0 +1,178 @@
+ <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-6" style="padding: 1rem">
+          <!--job Post-->
+          <div class="jumbotron">
+          <form (ngSubmit)="onSubmit()" #post="ngForm">
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label>Pick A Template</label>
+                <ng-select
+                  [multiple]="false"
+                  [options]="options"
+                  [(ngModel)]="mySelectValue"
+                  (selected)="selected($event)"
+                  style="background-color: white"
+                  name="selectedTemplate">
+                </ng-select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="jobTitle">Job Title*</label>
+                <input type="text" id="jobTitle" class="form-control" placeholder="Job Title" ngModel name="JobTitle" required>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="jobTitle">Job Type</label>
+                <ng-select
+                  [multiple]="false"
+                  [options]="optionsJobType"
+                  (selected)="selected($event)"
+                  [(ngModel)]="selectValueJobType"
+                  style="background-color: white"
+                  name="selected jobType">
+                </ng-select>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px">
+              <div class="col-sm-6">
+                <label for="StartDate">Start Date</label>
+                <div class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="StartDate" name="dateStart">
+                      <div class="input-group-addon" (click)="d.toggle();" >
+                        <img src="../../calender_img.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-inline col-sm-6">
+                <label style="margin-right: 10px">Start Time</label>
+                <ngb-timepicker [(ngModel)]="time" name="timeStart"></ngb-timepicker>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group" style="margin-top: 10px">
+                <label>Repeats Every</label>
+                <div class="btn-group-sm" data-toggle="buttons" ngModelGroup="RDays">
+                  <label class="btn btn-primary" [class.active]="weekday[0]">
+                    <input type="checkbox" [(ngModel)]="weekday[0]" name="su"> Su
+                  </label>
+                  <label class="btn btn-primary" [class.active]="weekday[1]">
+                    <input type="checkbox" [(ngModel)]="weekday[1]" name="mo"> Mo
+                  </label>
+                  <label class="btn btn-primary" [class.active]="weekday[2]">
+                    <input type="checkbox" [(ngModel)]="weekday[2]" name="tu"> Tu
+                  </label>
+                  <label class="btn btn-primary" [class.active]="weekday[3]">
+                    <input type="checkbox" [(ngModel)]="weekday[3]" name="we"> We
+                  </label>
+                  <label class="btn btn-primary" [class.active]="weekday[4]">
+                    <input type="checkbox" [(ngModel)]="weekday[4]" name="th"> Th
+                  </label>
+                  <label class="btn btn-primary" [class.active]="weekday[5]">
+                    <input type="checkbox" [(ngModel)]="weekday[5]" name="fr"> Fr
+                  </label>
+                  <label class="btn btn-primary" [class.active]="weekday[6]">
+                    <input type="checkbox" [(ngModel)]="weekday[6]" name="sa"> Sa
+                  </label>
+                </div>
+              </div>
+              <div class="form-group col-sm-4" style="margin-top: 10px">
+                <label for="duration">Duration*</label>
+                <input class="form-control" type="txt" id="duration" ngModel name="duration" required>
+              </div>
+            </div>
+            <!--End Date And Time-->
+            <div class="row" style="margin-bottom: 20px">
+              <div class="col-sm-6">
+                <label for="EndDate">End Date</label>
+                <div class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="modelEndDate" ngbDatepicker #dEnd="ngbDatepicker" id="EndDate" name="dateEnd">
+                      <div class="input-group-addon" (click)="dEnd.toggle();" >
+                        <img src="../../calender_img.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Hour Rate-->
+            <div class="row">
+              <div class="form-group col-sm-3 col-md-3">
+                <label>Hourly Rate*</label>
+                <input class="form-control" type="txt" placeholder="20" ngModel name="hourRate" required>
+              </div>
+              <div class="form-group col-sm-9 col-md-9">
+                <label>Job Location*</label>
+                <input class="form-control" type="txt" placeholder="Enter Your Job Location" ngModel name="address" required>
+              </div>
+            </div>
+            <div class="form-inline row">
+              <div class="col">
+                <button class="btn btn-primary" type="submit" [disabled]="!post.valid">Post Job</button>
+                <button class="btn btn-success" [disabled] = "true">Save Draft</button>
+              </div>
+            </div>
+            <div class="form-group row" style="padding: .5rem">
+              <label for="comment">Job Description:*</label>
+              <textarea class="form-control" rows="3" id="comment"
+                        placeholder="Brief description about the job"
+                        ngModel name="jobDescription" required>
+              </textarea>
+            </div>
+            <div class="row">
+              <div class="col form-group">
+                <label for="mSkills">Mandotary Skills:</label>
+                <textarea class="form-control" name="mandatorySkills" id="mSkills" rows="3" ngModel></textarea>
+              </div>
+              <div class="col form-group">
+                <label for="oSkills">Optional Skills:</label>
+                <textarea class="form-control" name="optionalSkills" id="oSkills" rows="3" ngModel></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+        </div>
+        <div class="col-sm-12 col-md-6" style="padding: 1rem">
+          <div class="row d-flex justify-content-center">
+            <div class="col ">
+              <div class="col-sm-8">
+                <div class="card">
+                  <div class="card-block">
+                    <h3 class="card-title">Post Job</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut distinctio eius illum incidunt laudantium magnam molestias nesciunt non officia quasi quo repellat sapiente tempore, veritatis voluptate! Inventore, quisquam!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-100">
+            </div>
+            <div class="col" style="padding: 1rem">
+              <div class="col-sm-8">
+                <div class="card ">
+                  <div class="card-header bg-success" style="text-align: center;">
+                    IT'S FREE TO POST A Job!
+                  </div>
+                  <div class="card-block">
+                    <h4 class="card-title">Try it today!</h4>
+                    <ul>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                      <li>Aliquid beatae deserunt dicta dolores dolorum </li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                      <li>Aliquid beatae deserunt dicta dolores dolorum</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

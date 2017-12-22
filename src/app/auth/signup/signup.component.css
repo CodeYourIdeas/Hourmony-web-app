@@ -1,0 +1,28 @@
+.padding {
+  padding: 10px;
+}
+
+.margin {
+  margin-right: 8px;
+  margin-bottom: 3px;
+}
+
+.btn-submit {
+  background-color:#087f23;
+  color:white;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.header-font {
+  font-weight: 600;
+  font-style: oblique;
+  font-family: Georgia, serif;
+}
+
+.text-font{
+font-family: Times, Times New Roman, serif;
+}
+

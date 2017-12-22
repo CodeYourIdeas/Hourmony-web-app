@@ -1,0 +1,59 @@
+<div class="row padding">
+    <div class="col-sm-12">
+      <agm-map
+        [latitude]="lat"
+        [longitude]="lng"
+        [usePanning]="usePanning"
+        [zoom]="zoom"
+        [disableDefaultUI]= false
+        [zoomControl]="true"
+        (mapClick)="mapClicked($event)"
+        #map>
+
+        <agm-marker
+          *ngFor="let m of allJobs; let i = index"
+          (markerClick)="clickedMarker(m, i)"
+          [latitude]="m.job_geo_location.M.lat.SS[0] "
+          [longitude]="m.job_geo_location.M.lang.SS[0] "
+          [markerDraggable]="false"
+          (dragEnd)="markerDragEnd(m, $event)">
+          <agm-info-window>
+            <strong>{{ m.job_title.S }}</strong>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+<!--        <p> lat loc {{ allJobs[0].job_geo_location.M.lat.SS[0]}}</p>-->
+    </div>
+  </div>
+<div class="row" style="padding: 1rem">
+  <div class="col-lg-3 col-md-4 col-sm-6" style="margin-left: .5rem">
+    <h3>Top Jobs</h3>
+    <app-top-jobs></app-top-jobs>
+  </div>
+  <div class="col-lg-3">
+    <div class="" style="margin-left: .5rem">
+      <h3 style="text-align: center">Job History</h3>
+      <app-job-history *ngFor="let h of jobHistory"
+                       [history]="h">
+        <h4 class="list-group-item-heading">{{ h.jobTitle }} {{ h.jobId }}</h4>
+        <p class="list-group-item-text">Money Earned={{ h.money}} date {{ h.date}}</p>
+      </app-job-history>
+    </div>
+  </div>
+  <div class="col-xs-11 col-sm-6 col-md-4 col-lg-4" style="margin-left: .5rem">
+    <div *ngIf="markerClicked">
+      <app-job-detail-card [jobDetail]="selectedMarker"></app-job-detail-card>
+    </div>
+  </div>
+</div>
+<!--<div class="row">-->
+  <!--<div *ngIf="markerClicked" class="col-xs-11 col-sm-6 col-md-4 col-lg-3" style="margin-left: .5rem">-->
+    <!--<h3 style="text-align: center">Job History</h3>-->
+    <!--<app-job-history *ngFor="let h of jobHistory"-->
+                     <!--[history]="h">-->
+      <!--<h4 class="list-group-item-heading">{{ h.jobTitle }} {{ h.jobId }}</h4>-->
+      <!--<p class="list-group-item-text">Money Earned={{ h.money}} date {{ h.date}}</p>-->
+    <!--</app-job-history>-->
+  <!--</div>-->
+<!--</div>-->
+

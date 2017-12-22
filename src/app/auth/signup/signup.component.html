@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-lg-2 col-md-1 col-sm-2">
+  </div>
+  <div class="col-lg-4 col-md-3 col-sm-4">
+    <p class="text-justify text-font">
+      Jobs and employment industry - an evergreen space but at the same time is very busy with big and established players like
+      LinkedIn, Monster, Dice, etc. along with some recent entries like SimplyHired, angel.co etc. At the same time, there are many new startups working to make their mark. We are cognizant of the vast & fast-changing dynamic competition landscape. With this awareness we have carved out a niche that no one else is offering right now, However, most of them are resume-centric and/or network driven.
+      We further believe in lean & mean product strategy - one that can adapt to the dynamic landscape in this industry.
+    </p>
+  </div>
+  <div class="col-lg-5 col-md-7 col-sm-6 col-sm-8 col-xs-10">
+    <div>
+      <h1 class="text-font">Sign Up</h1>
+      <form (ngSubmit)="onSubmit()"  #f="ngForm">
+        <div class="form-inline padding">
+          <input type="text" class="form-control margin" id="firstName"
+                 placeholder="Enter First Name"
+                 ngModel
+                 name="firstName"
+                 required>
+          <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name"
+                 ngModel
+                 name="lastName"
+                 required
+          >
+        </div>
+        <div class="form-inline padding">
+
+          <input type="email" class="form-control margin" id="exampleInputEmail1" placeholder="Enter email"
+                 ngModel
+                 name="email"
+                 email
+                 #email="ngModel"
+          >
+          <!--<label class="margin">Or</label>-->
+          <input type="text" class="form-control" placeholder="username" id="username1" ngModel name="userName1">
+          <span class="help-block" *ngIf="!email.valid && email.touched">Please Enter Valid Email Id</span>
+        </div>
+
+        <div class="form-inline padding">
+              <ng-select class="form-control margin"
+                         name="country"
+                         id="country-id"
+                         [options]="options"
+                         bindLabel="label"
+                         bindValue="value"
+                         placeholder="Select country"
+                         [multiple]="false"
+                         [(ngModel)]="mySelectValue"
+                         (selected)="selected($event)"
+                         style="background-color: white">
+              </ng-select>
+          <input type="text" class="form-control" id="cellPhone" placeholder="+16692142145" ngModel name="phone">
+        </div>
+
+        <div class="form-inline padding">
+          <input type="password" class="form-control margin" id="secretKey1" placeholder="Secret Key #1"
+                 ngModel
+                 name="secretKey1"
+                 required
+          >
+          <input type="password" class="form-control" id="confirmkey1" placeholder="Confirm Key #1"
+                 ngModel
+                 name="confirmkey1"
+                 #confirmkey1="ngModel"
+                 required
+          >
+          <div *ngIf="f.value.secretKey1 !== f.value.confirmkey1 && confirmkey1.touched">Passwords do not match!</div>
+        </div>
+        <div class="form-inline padding">
+          <input type="password" class="form-control margin" id="secretKey2" placeholder="Secret Key #2"
+                 ngModel
+                 name="secretKey2"
+                 required
+          >
+          <input type="password" class="form-control" id="confirmkey2" placeholder="Confirm Key #2"
+                 ngModel
+                 name="confirmkey2"
+                 #confirmkey2="ngModel"
+                 required
+          >
+          <div *ngIf="f.value.secretKey2 !== f.value.confirmkey2 && confirmkey2.touched">Passwords do not match!</div>
+        </div>
+        <button type="submit" [disabled]="!f.valid" class="btn btn-submit"  style="margin-left: 10px">Create Account</button>
+      </form>
+      <!--confirm user-->
+      <br>
+      <form (ngSubmit)="onConfirm()" #c="ngForm">
+        <div class="form-inline padding">
+          <input type="text"
+                 class="form-control"
+                 id="username"
+                 placeholder="UserName"
+                 ngModel
+                 name="usernameC"
+                 required>
+        </div>
+        <div class="form-inline padding">
+          <input type="text"
+                 class="form-control"
+                 id="passwordC"
+                 placeholder="Code"
+                 ngModel
+                 name="code" required>
+        </div>
+        <button type="submit" [disabled]="!c.valid" class="btn btn-submit"  style="margin-left: 10px">Confirm Your Account</button>
+      </form>
+    </div>
+  </div>
+</div>

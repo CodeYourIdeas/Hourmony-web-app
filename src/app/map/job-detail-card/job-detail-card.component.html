@@ -1,0 +1,37 @@
+<div class="card text-center">
+  <div class="card-header">
+    {{ jobDetail.title }}
+  </div>
+  <div class="card-block">
+    <!--<h4 class="card-title">Special title treatment</h4>-->
+      <p class="card-text">{{ jobDetail.description }}</p>
+    <div *ngIf="jobDetail.apply === false">
+      <input type="checkbox" [checked]="terms" (click)="onTermsConditions()">
+      <a class="" href="https://hourMony.com/termsAndConditions"> Aceept Terms and Condistions </a>
+    </div>
+    <div>
+      <a class="btn btn-primary" (click)="onApply()" *ngIf = "terms === true && jobDetail.apply === false"> Apply </a>
+    </div>
+    <div *ngIf = "jobDetail.apply === true">
+      <h4>Wait for your application to be accepted</h4>
+    </div>
+  </div>
+  <div class="card-footer text-muted text-left">
+    <table class="table p border-0">
+        <tr>
+          <th style="font-size: small">Start Date</th>
+          <th style="font-size: small">Start Time</th>
+          <th style="font-size: small">Duration</th>
+          <th style="font-size: small">Rate/H</th>
+        </tr>
+    <tbody>
+      <tr>
+        <td>{{ jobDetail.startDate }}</td>
+        <td> {{ jobDetail.startTime }}</td>
+        <td>{{ jobDetail.noHours}}</td>
+        <td> {{ jobDetail.jobRate }}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>

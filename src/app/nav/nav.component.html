@@ -1,0 +1,29 @@
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-success">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">HourMony</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/profile">Profile</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/jobSeeker">Job Seaker</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/jobPost">Job Post</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/jobDashboard">Job DashBoard</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/appliedDashboar">Applied Jobs</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a (click)="onLogout()" class="nav-link">SignOut</a></li>
+    </ul>
+  </div>
+</nav>

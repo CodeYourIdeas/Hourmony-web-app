@@ -1,0 +1,25 @@
+<nav class="navbar navbar-toggleable-sm navbar-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    <img [src]="LOGO" alt="logo" width="155" height="31" />
+  </button>
+
+
+  <div class="" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+    </ul>
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmit()" #f="ngForm">
+      <input class="form-control" type="text" placeholder="Secret Key #1"
+             ngModel
+             name="secretKey1"
+             required>
+      <input class="form-control" type="password" placeholder="Secret Key #2"
+             ngModel
+             name="secretKey2"
+             required>
+      <button class="btn btn-submit my-2 my-sm-0" type="submit">Log In</button>
+    </form>
+  </div>
+</nav>
+<app-signup class="padding"></app-signup>
+

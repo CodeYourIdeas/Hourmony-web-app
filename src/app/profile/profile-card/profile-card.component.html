@@ -1,0 +1,21 @@
+<div class="col-3" style="margin: 1rem">
+  <div class="card" style="width: 25rem;">
+    <img class="card-img-top profile-card" [src]="LOGO" alt="profile pic">
+    <div class="card-block">
+      <h4 class="card-title">{{ profileData.name }} {{ profileData.family_name }}</h4>
+      <!--<p class="card-text">Male:23 Location:sunnyvale,CA Available:4Hrs</p>-->
+      <h5>Balance:{{ profileData.balance}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>{{ profileData.Gender}}</b>:{{ profileData.Age}}</li>
+      <li class="list-group-item"><b>Location</b>:{{ profileData.Local}}</li>
+      <li class="list-group-item"><b>Available</b>:4Hrs</li>
+      <li class="list-group-item"><b>#of jobs Completed</b>:{{ profileData.jobs_completed}}</li>
+      <li class="list-group-item"><b>#of hours completed</b>:{{ profileData.hours_completed}}</li>
+    </ul>
+    <div class="card-block">
+      <a href="" class="card-link">Past Jobs</a>
+      <a href="" class="card-link">Current Jobs</a>
+    </div>
+  </div>
+</div>

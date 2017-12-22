@@ -1,0 +1,74 @@
+<div class="row">
+  <app-profile-card></app-profile-card>
+  <div class="col-6" style="margin-left: 3rem;margin-top: 1rem">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">User Details</h4>
+        <div>
+          <form action="">
+            <div class="form-group row">
+              <label for="nameId" class="col-2 col-form-label">Name</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="Saurabh" id="nameId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="MiddleNameId" class="col-2 col-form-label">MiddleName</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="Kumar" id="MiddleNameId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="FamilyNameId" class="col-2 col-form-label">FamilyName</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="Patwari" id="FamilyNameId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="usernameId" class="col-2 col-form-label">UserName</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="Saurabh09" id="usernameId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
+              <div class="col-10">
+                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="genderId" class="col-2 col-form-label">Gender</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="Male" id="genderId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="addressId" class="col-2 col-form-label">Address</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="1430 sunnyvale,CA" id="addressId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="birthdayId" class="col-2 col-form-label">BirthDay</label>
+              <div class="col-10">
+                <input class="form-control" type="date" value="2011-08-19" id="birthdayId" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email-input" class="col-2 col-form-label">Email</label>
+              <div class="col-10">
+                <input class="form-control" type="email" value="saurabh@example.com" id="email-input" [disabled]="editable">
+              </div>
+            </div>
+            <div class="form-group" *ngIf="editable == true">
+              <button class="btn btn-primary" type="button" (click)="onEdit()">Edit</button>
+            </div>
+            <div class="form-group" *ngIf="editable == false">
+              <button class="btn btn-primary" type="button" (click)="onSave()">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

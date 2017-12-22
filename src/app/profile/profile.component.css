@@ -1,0 +1,14 @@
+.profile-card {
+  max-width: 200px;
+  margin: 1rem;
+}
+
+.block {
+  background-color: #4caf50;
+  height: 200px;
+}
+
+.block1 {
+  background-color: deepskyblue;
+  height: 200px;
+}

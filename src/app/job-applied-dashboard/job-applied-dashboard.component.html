@@ -1,0 +1,19 @@
+<p>
+  job-applied-dashboard works!
+</p>
+
+<div class="col-4" style="padding: 5%">
+<ul class="list-group" *ngFor="let d of jobApplied">
+  <li class="list-group-item"><h5> JobTitle : {{ d.job_title }} </h5>
+    <div *ngIf='d.acceptedUser == true'>
+      <h5 class="accept">&nbsp; Accepted</h5>
+    </div>
+    <div *ngIf='d.acceptedUser == false && d.date_job_in_contract != "null"'>
+      <h5 class="wait">This Job Is no Longer Available</h5>
+    </div>
+    <div *ngIf='d.acceptedUser == false && d.date_job_in_contract == "null"'>
+      <h5 class="wait">&nbsp; Wait</h5>
+    </div>
+  </li>
+</ul>
+</div>

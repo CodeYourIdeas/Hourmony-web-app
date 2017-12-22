@@ -1,0 +1,11 @@
+<div *ngIf="!isAuthenticated">
+  <app-signin></app-signin>
+</div>
+<div *ngIf="isAuthenticated">
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+</div>
+<div>
+<app-footer></app-footer>
+</div>
+

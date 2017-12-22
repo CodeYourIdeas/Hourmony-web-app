@@ -1,0 +1,17 @@
+.block {
+  background-color: #4caf50;
+  height: 200px;
+}
+
+.block1 {
+  background-color: deepskyblue;
+  height: 200px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
