@@ -9,8 +9,9 @@
     </p>
   </div>
   <div class="col-lg-5 col-md-7 col-sm-6 col-sm-8 col-xs-10">
+    <div id="sign-up">
     <div>
-      <h1 class="text-font">Sign Up</h1>
+      <h1 class="text-font headline">Sign Up</h1>
       <form (ngSubmit)="onSubmit()"  #f="ngForm">
         <div class="form-inline padding">
           <input type="text" class="form-control margin" id="firstName"
@@ -83,8 +84,11 @@
         </div>
         <button type="submit" [disabled]="!f.valid" class="btn btn-submit"  style="margin-left: 10px">Create Account</button>
       </form>
+    </div>
+</div>
       <!--confirm user-->
       <br>
+      <div id="confirm-user">
       <form (ngSubmit)="onConfirm()" #c="ngForm">
         <div class="form-inline padding">
           <input type="text"
@@ -105,6 +109,5 @@
         </div>
         <button type="submit" [disabled]="!c.valid" class="btn btn-submit"  style="margin-left: 10px">Confirm Your Account</button>
       </form>
-    </div>
   </div>
 </div>
