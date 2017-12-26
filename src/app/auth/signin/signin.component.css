@@ -6,12 +6,42 @@
   padding: 10px;
 }
 
-.log-in {
-  background-color:#087f23;
-  color:white;
-}
-
 .btn-submit {
   background-color: #087f23;
   color: white;
+}
+
+.btn-submit:hover
+{
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 2px 2px #087f23;
+  border: 1px solid #087f23;
+  background-color: white;
+  color: #087f23;
+}
+
+.btn-submit:focus
+{
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  transform: translateY(2px);
+}
+
+#navbarTogglerDemo02
+{
+  padding: 10px;
+  width: 40%;
+  border-radius: 4px;
+  background-color: silver;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#navbarTogglerDemo02 > form
+{
+  text-align: right;
 }
