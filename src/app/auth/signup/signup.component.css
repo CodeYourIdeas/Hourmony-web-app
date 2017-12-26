@@ -7,9 +7,36 @@
   margin-bottom: 3px;
 }
 
+.row
+{
+  background: url('macbook.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 10px;
+}
+
 .btn-submit {
   background-color:#087f23;
   color:white;
+}
+
+.btn-submit:hover
+{
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 2px 2px #087f23;
+  border: 1px solid #087f23;
+  background-color: white;
+  color: #087f23;
+}
+
+.btn-submit:focus
+{
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  transform: translateY(2px);
 }
 
 input.ng-invalid.ng-touched {
@@ -17,12 +44,39 @@ input.ng-invalid.ng-touched {
 }
 
 .header-font {
-  font-weight: 600;
   font-style: oblique;
   font-family: Georgia, serif;
 }
 
 .text-font{
-font-family: Times, Times New Roman, serif;
+font-family: Noto, Roboto;
 }
 
+#sign-up
+{
+
+  background-color: rgba(135, 206, 250, 0.9);
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-right: 3px solid lightgrey;;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+ .headline
+{
+  text-align: center;
+  color: white;
+}
+
+#confirm-user
+{
+
+  margin-top: -26px;
+  background-color: rgba(144, 238, 144, 0.9);
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  padding: 15px;
+  border-radius: 10px;
+}
