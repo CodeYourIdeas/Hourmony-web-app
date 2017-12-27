@@ -7,7 +7,7 @@
   margin-bottom: 3px;
 }
 
-.row
+.image-section
 {
   background: url('macbook.png') no-repeat center center fixed;
   background-size: cover;
@@ -15,7 +15,7 @@
 }
 
 .btn-submit {
-  background-color:#087f23;
+  background-color: #087f23;
   color:white;
 }
 
@@ -55,7 +55,8 @@ font-family: Noto, Roboto;
 #sign-up
 {
 
-  background-color: rgba(135, 206, 250, 0.9);
+  width: 504px;
+  background-color: rgba(59, 89, 152, 0.5);
   border-top: 3px solid lightgrey;
   border-left: 3px solid lightgrey;
   border-right: 3px solid lightgrey;;
@@ -72,11 +73,48 @@ font-family: Noto, Roboto;
 #confirm-user
 {
 
+  width: 504px;
   margin-top: -26px;
-  background-color: rgba(144, 238, 144, 0.9);
+  background-color: rgba(34, 139, 34, 0.5);
   border-top: 3px solid white;
   border-left: 3px solid white;
   border-right: 3px solid white;
   padding: 15px;
   border-radius: 10px;
+}
+
+.professional-networking
+{
+	width: 200px;
+	height: 250px;
+	margin-top: 200px;
+	background: url('macbook.png') no-repeat center;
+	 background-size: cover; 
+	border: 2px solid white;
+	border-radius: 2px;
+}
+
+.description
+{
+	padding: 10px;
+	height: 400px;
+	width: 1050px;
+	margin: 100px auto;
+	text-align: center;
+	border:2px solid forestgreen;
+}
+
+.col-md-12 > h1
+{
+	text-align: center;
+	text-decoration: underline;
+	text-decoration-color: limegreen;
+	color: darkgreen;
+	text-shadow: 2px 2px skyblue;
+}
+
+.col-md-12 > p
+{
+	margin: 50px;
+	text-align: center;
 }
