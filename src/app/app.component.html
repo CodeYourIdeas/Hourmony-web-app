@@ -1,7 +1,7 @@
 <div *ngIf="!isAuthenticated">
   <app-signin></app-signin>
 </div>
-<div *ngIf="isAuthenticated">
+<div *ngIf="isAuthenticated" class="body">
   <app-nav></app-nav>
   <router-outlet></router-outlet>
 </div>
