@@ -1,26 +1,23 @@
+footer {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    background-color: #333333;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 0px;
+    color: #fff;
+    text-align: center;
+}
 
-    footer {
-        position: relative;
-        height: 45px;
-        width: 100%;
-        background-color: #333333;
-        margin-top: 80px;
-        margin-bottom: 0px;
-    }
+p.copyright {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    line-height: 22px;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 5px;
+}
 
-    p.copyright {
-        position: absolute;
-        width: 100%;
-        color: #fff;
-        line-height: 22px;
-        font-size: 0.9em;
-        text-align: center;
-        padding:5px;
-    }
-    @media (width:1280px)
-    {
-        footer
-        {
-            margin-top:130px;
-        }
-    }
