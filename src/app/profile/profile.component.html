@@ -1,70 +1,110 @@
 <div class="row">
-  <app-profile-card></app-profile-card>
+  <app-profile-card [profileData]="profileData"></app-profile-card>
   <div class="col-6" style="margin-left: 3rem;margin-top: 1rem">
     <div class="card">
       <div class="card-block">
-        <h4 class="card-title">User Details</h4>
+        <h4 class="card-title">Basic Info</h4>
         <div>
-          <form action="">
+          <form (ngSubmit)="onSubmit()" #u="ngForm">
             <div class="form-group row">
-              <label for="nameId" class="col-2 col-form-label">Name</label>
-              <div class="col-10">
-                <input class="form-control" type="text" value="Saurabh" id="nameId" [disabled]="editable">
+              <label for="name" class="col-2 col-form-label">Name</label>
+              <div class="col-3">
+                <input class="form-control" type="text" id="name" name="name" [(ngModel)]="profileData.name" [disabled]="editable">
+              </div>
+              <div class="col-3">
+              <input class="form-control" type="text" id="middlename" name="middlename" [(ngModel)]="profileData.middlename" [disabled]="editable">
+              </div>
+              <div class="col-3">
+              <input class="form-control" type="text" id="familyname" name="familyname" [(ngModel)]="profileData.family_name" [disabled]="editable">
               </div>
             </div>
+            <!--<div class="form-group row">-->
+              <!--<label for="middlename" class="col-2 col-form-label">MiddleName</label>-->
+              <!--<div class="col-10">-->
+                
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group row">-->
+              <!--<label for="familyname" class="col-2 col-form-label">FamilyName</label>-->
+              <!--<div class="col-10">-->
+                
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group row">
+              <label for="username" class="col-2 col-form-label">UserName</label>
+              <div class="col-9">
+                <input class="form-control" type="text" id="username" name="username" [(ngModel)]="profileData.username" [disabled]="true">
+              </div>
+            </div>-->
+            
             <div class="form-group row">
-              <label for="MiddleNameId" class="col-2 col-form-label">MiddleName</label>
-              <div class="col-10">
-                <input class="form-control" type="text" value="Kumar" id="MiddleNameId" [disabled]="editable">
+            <div class="col-2">
+              Gender
+            </div>
+            <div class="col-1">
+              <label for="male">Male</label>
+              </div>
+              <div class="col-1">
+                <input type="radio" id="gender" [value]="profileData.Gender" name="Male" [disabled]="editable">
+              </div>
+              <div class="col-1">
+              <label for="female">Female</label>
+              </div>
+              <div class="col-1">
+              <input type="radio" name="Female" [value]="profileData.Gender" [disabled]="editable">
+              </div>
+              <div class="col-4">
+              <input type="date" id="birthday" name="birthday" ngModel [disabled]="editable">
               </div>
             </div>
+            
+            <!--<div class="form-group row">
+              <label for="birthday" class="col-2 col-form-label">BirthDay</label>
+              <div class="col-9">
+                <input class="form-control" type="date" id="birthday" name="birthday" ngModel [disabled]="editable">
+              </div>
+            </div>-->
+
             <div class="form-group row">
-              <label for="FamilyNameId" class="col-2 col-form-label">FamilyName</label>
-              <div class="col-10">
-                <input class="form-control" type="text" value="Patwari" id="FamilyNameId" [disabled]="editable">
+            <div class="col-2">
+              <label for="telephone" class="col-form-label">Phone Number</label>
+              </div>
+              <div class="col-2">
+                <input class="form-control" type="tel" id="telephone" name="telephone" [(ngModel)]="profileData.phonenumber" [disabled]="editable">
+              </div>
+              <div class="col-2">
+              <label for="email" class="col-form-label"><E-mail/label>
+              </div>
+              <div class="col-3">
+              <input class="form-control" type="email" id="email" name="email" [(ngModel)]="profileData.email" email              #email="ngModel"  [disabled]="editable">
               </div>
             </div>
+
             <div class="form-group row">
-              <label for="usernameId" class="col-2 col-form-label">UserName</label>
-              <div class="col-10">
-                <input class="form-control" type="text" value="Saurabh09" id="usernameId" [disabled]="editable">
+              <label for="address" class="col-2 col-form-label">Address</label>
+              <div class="col-9">
+                <!--<input class="form-control" type="text" id="address" name="address" [(ngModel)]="profileData.address" [disabled]="editable">-->
+                <textarea row="20" col="15"></textarea>
               </div>
             </div>
-            <div class="form-group row">
-              <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
-              <div class="col-10">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" [disabled]="editable">
+            
+            
+            <!--<div class="form-group row">
+              <label for="email" class="col-2 col-form-label">Email</label>
+              <div class="col-9">
+                <input class="form-control" type="email" id="email" name="email" [(ngModel)]="profileData.email" email
+                       #email="ngModel"  [disabled]="editable">
+                <span class="help-block" *ngIf="!email.valid && email.touched">Please Enter Valid Email Id</span>
               </div>
-            </div>
-            <div class="form-group row">
-              <label for="genderId" class="col-2 col-form-label">Gender</label>
-              <div class="col-10">
-                <input class="form-control" type="text" value="Male" id="genderId" [disabled]="editable">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="addressId" class="col-2 col-form-label">Address</label>
-              <div class="col-10">
-                <input class="form-control" type="text" value="1430 sunnyvale,CA" id="addressId" [disabled]="editable">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="birthdayId" class="col-2 col-form-label">BirthDay</label>
-              <div class="col-10">
-                <input class="form-control" type="date" value="2011-08-19" id="birthdayId" [disabled]="editable">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="email-input" class="col-2 col-form-label">Email</label>
-              <div class="col-10">
-                <input class="form-control" type="email" value="saurabh@example.com" id="email-input" [disabled]="editable">
-              </div>
-            </div>
+            </div>-->
+
             <div class="form-group" *ngIf="editable == true">
-              <button class="btn btn-primary" type="button" (click)="onEdit()">Edit</button>
+              <button class="btn btn-primary" (click)="onEdit()">Edit</button>
             </div>
             <div class="form-group" *ngIf="editable == false">
-              <button class="btn btn-primary" type="button" (click)="onSave()">Save</button>
+             <!-- <button class="btn btn-primary" type="button" (click)="onSave()">Save</button>-->
+              <button type="submit" class="btn btn-success" [disabled]="!u.valid"  style="margin-left: 10px">Save</button>
+              <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
             </div>
           </form>
         </div>
