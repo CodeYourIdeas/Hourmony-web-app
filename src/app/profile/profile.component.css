@@ -1,14 +1,27 @@
 .profile-card {
-  max-width: 200px;
-  margin: 1rem;
+    max-width: 200px;
+    margin: 1rem;
 }
 
 .block {
-  background-color: #4caf50;
-  height: 200px;
+    background-color: #4caf50;
+    height: 200px;
 }
 
 .block1 {
-  background-color: deepskyblue;
-  height: 200px;
+    background-color: deepskyblue;
+    height: 200px;
+}
+
+.card-block {
+    box-shadow: 6px 7px rgba(0, 0, 0, 0.5);
+}
+
+.card-block>h4 {
+    text-align: center;
+    color: white;
+    background-color: limegreen;
+    font-size: 45px;
+    padding: 10px;
+    border-radius: 4px;
 }
